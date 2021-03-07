@@ -10,6 +10,7 @@ public class Simulation {
     private int numberOfRolls;
 
     private ArrayList<Integer> simulationMemory = new ArrayList<Integer>();
+    int[] simResults = new int[11];
 
     public Simulation(int dice, int rolls) {
         this.numberOfDice = dice;
@@ -31,8 +32,6 @@ public class Simulation {
     }
 
     public void printResults() {
-
-        int[] simResults = new int[11];
 
         for (int i = 0; i < simulationMemory.size(); i++) {
             if (simulationMemory.get(i) == 2) {
@@ -59,11 +58,8 @@ public class Simulation {
                 simResults[10]++;
             }
         }
-        for (int j = 0; j < simResults.length - 1; j++) {
 
-        }
-
-        String two = String.format("% d :   % d:  %.2f **", 2, simResults[0], (float)simResults[0]/1000000);
+        String two = String.format("% d :   % d:  %.2f %s", 2, simResults[0], (float)simResults[0]/1000000);
         String three = String.format("% d :   % d:  %.2f *****", 3, simResults[1], (float)simResults[1]/1000000);
         String four = String.format("% d :   % d:  %.2f ********", 4, simResults[2], (float)simResults[2]/1000000);
         String five = String.format("% d :   %d:  %.2f ***********", 5, simResults[3], (float)simResults[3]/1000000);
@@ -88,5 +84,20 @@ public class Simulation {
         System.out.println(eleven);
         System.out.println(twelve);
 
+    }
+
+    public String stars(int n) {
+
+        String stars = "";
+        int divided = simResults[n] / 10000;
+
+        for (int i = 0; i < divided; i++) {
+            stars += "*";
+        }
+        return stars;
+    }
+
+    public void printStars() {
+        System.out.println(stars(0));
     }
 }
