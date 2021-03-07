@@ -10,7 +10,7 @@ public class testSimulation {
         //expected
         Simulation sim = new Simulation(2,5);
         //method call
-        Integer roll = sim.runningSimulation();
+        Integer roll = sim.runSimulation();
         //assertion
         Assert.assertTrue(roll >= 10 && roll <= 60);
     }

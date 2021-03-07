@@ -31,4 +31,16 @@ public class Bins {
         }
         return instances;
     }
+
+    public List<Integer> searchBinRange(int startBin, int finalBin) {
+        List<Integer> searchResults = new ArrayList<Integer>();
+        for (int i = startBin; i <= finalBin; i++) {
+            searchResults.add(tossAndSumMemory.get(i));
+        }
+        return searchResults;
+    }
+
+    public Integer searchForBin(int binToFind) {
+        return tossAndSumMemory.get(binToFind);
+    }
 }
