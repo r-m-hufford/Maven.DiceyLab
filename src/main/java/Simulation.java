@@ -59,6 +59,9 @@ public class Simulation {
                 simResults[10]++;
             }
         }
+        for (int j = 0; j < simResults.length - 1; j++) {
+
+        }
 
         String two = String.format("% d :   % d:  %.2f **", 2, simResults[0], (float)simResults[0]/1000000);
         String three = String.format("% d :   % d:  %.2f *****", 3, simResults[1], (float)simResults[1]/1000000);
